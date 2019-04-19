@@ -1,0 +1,11 @@
+platform:ios,'8.0'
+target ‘FreshDemo’ do
+pod 'StreamKit'
+pod 'AFNetworking'
+pod 'StreamKit-UI'
+pod 'YYCategories'
+pod 'Masonry'
+pod 'YYModel'
+pod 'TMarco'
+pod 'MJRefresh'
+end

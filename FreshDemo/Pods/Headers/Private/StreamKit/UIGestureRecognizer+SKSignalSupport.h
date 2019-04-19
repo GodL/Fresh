@@ -1,0 +1,1 @@
+../../../StreamKit/StreamKit/UI/UIGestureRecognizer+SKSignalSupport.h
