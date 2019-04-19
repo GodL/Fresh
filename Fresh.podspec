@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "Fresh"
-  s.version      = "1.0"
+  s.version      = "1.0.1"
   s.homepage     = "https://github.com/GodL/Fresh.git"
   s.license      = "MIT"
   s.author       = { "GodL" => "547188371@qq.com" }
@@ -53,4 +53,5 @@ Pod::Spec.new do |s|
   ss.dependency 'StreamKit'
   ss.public_header_files = 'Fresh/Controller/*.h'
   ss.source_files = 'Fresh/Controller/*.{h,m}'
+  end
 end
