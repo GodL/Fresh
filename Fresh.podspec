@@ -1,7 +1,8 @@
 
 Pod::Spec.new do |s|
   s.name         = "Fresh"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
+  s.summary      = 'Base object for iOS'
   s.homepage     = "https://github.com/GodL/Fresh.git"
   s.license      = "MIT"
   s.author       = { "GodL" => "547188371@qq.com" }
