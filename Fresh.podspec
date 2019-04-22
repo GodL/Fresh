@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "Fresh"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = 'Base object for iOS'
   s.homepage     = "https://github.com/GodL/Fresh.git"
   s.license      = "MIT"
@@ -13,14 +13,12 @@ Pod::Spec.new do |s|
 
   s.subspec 'Marco' do |ss|
   ss.source_files = 'Fresh/Marco/*.h'
-  ss.public_header_files = 'Fresh/Marco/*.h'
   end
 
   s.subspec 'Service' do |ss|
   ss.dependency 'YYModel'
   ss.dependency 'AFNetworking'
   ss.dependency 'StreamKit'
-  ss.public_header_files = 'Fresh/Service/*.h'
   ss.source_files = 'Fresh/Service/*.{h,m}'
   end
 
@@ -28,7 +26,6 @@ Pod::Spec.new do |s|
   ss.dependency 'MJRefresh'
   ss.dependency 'StreamKit'
   ss.dependency 'Masonry'
-  ss.public_header_files = 'Fresh/Category/*.h'
   ss.source_files = 'Fresh/Category/*.{h,m}'
   end
 
@@ -39,20 +36,17 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Model' do |ss|
-  ss.public_header_files = 'Fresh/Model/*.h'
   ss.source_files = 'Fresh/Model/*.{h,m}'
   end
 
   s.subspec 'View' do |ss|
   ss.dependency 'Masonry'
-  ss.public_header_files = 'Fresh/View/*.h'
   ss.source_files = 'Fresh/View/*.{h,m}'
   end
 
   s.subspec 'Controller' do |ss|
   ss.dependency 'Masonry'
   ss.dependency 'StreamKit'
-  ss.public_header_files = 'Fresh/Controller/*.h'
   ss.source_files = 'Fresh/Controller/*.{h,m}'
   end
 end
