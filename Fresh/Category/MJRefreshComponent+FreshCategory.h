@@ -6,7 +6,7 @@
 //  Copyright © 2019 com.GodL.github. All rights reserved.
 //
 
-#import "MJRefreshComponent.h"
+#import <MJRefresh/MJRefresh.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
