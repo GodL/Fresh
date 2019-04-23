@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong,nullable) UIRefreshControl *refreshView;
 
+- (void)beginRefresh;
+
 @end
 
 NS_ASSUME_NONNULL_END

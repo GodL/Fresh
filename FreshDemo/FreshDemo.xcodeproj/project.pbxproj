@@ -31,6 +31,9 @@
 		8830119F2269A5B80038B4C5 /* FreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8830119E2269A5B80038B4C5 /* FreshTableView.m */; };
 		883011A22269A7230038B4C5 /* FreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 883011A12269A7230038B4C5 /* FreshBaseView.m */; };
 		883011A52269A80A0038B4C5 /* FreshBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883011A32269A80A0038B4C5 /* FreshBaseController.m */; };
+		8838D68E226EEA0F00A78B14 /* FreshDatasViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D68D226EEA0F00A78B14 /* FreshDatasViewModel.m */; };
+		8838D691226EEE4600A78B14 /* FreshContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D690226EEE4600A78B14 /* FreshContentViewController.m */; };
+		8838D694226EEF0900A78B14 /* FreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D693226EEF0900A78B14 /* FreshTableViewController.m */; };
 		E450491ABE7C4220D40C2CA3 /* libPods-FreshDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9134BCCBE898ABCDC5325 /* libPods-FreshDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +107,12 @@
 		883011A12269A7230038B4C5 /* FreshBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshBaseView.m; sourceTree = "<group>"; };
 		883011A32269A80A0038B4C5 /* FreshBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshBaseController.m; sourceTree = "<group>"; };
 		883011A42269A80A0038B4C5 /* FreshBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshBaseController.h; sourceTree = "<group>"; };
+		8838D68C226EEA0F00A78B14 /* FreshDatasViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshDatasViewModel.h; sourceTree = "<group>"; };
+		8838D68D226EEA0F00A78B14 /* FreshDatasViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshDatasViewModel.m; sourceTree = "<group>"; };
+		8838D68F226EEE4600A78B14 /* FreshContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshContentViewController.h; sourceTree = "<group>"; };
+		8838D690226EEE4600A78B14 /* FreshContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshContentViewController.m; sourceTree = "<group>"; };
+		8838D692226EEF0900A78B14 /* FreshTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshTableViewController.h; sourceTree = "<group>"; };
+		8838D693226EEF0900A78B14 /* FreshTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshTableViewController.m; sourceTree = "<group>"; };
 		A89911F39DB499F227B6FD61 /* Pods-FreshDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreshDemo/Pods-FreshDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +183,8 @@
 			children = (
 				880BF71B2269B98800665CEF /* FreshViewModel.h */,
 				880BF71C2269B98800665CEF /* FreshViewModel.m */,
+				8838D68C226EEA0F00A78B14 /* FreshDatasViewModel.h */,
+				8838D68D226EEA0F00A78B14 /* FreshDatasViewModel.m */,
 				880BF71E2269BAEF00665CEF /* FreshPageViewModel.h */,
 				880BF71F2269BAEF00665CEF /* FreshPageViewModel.m */,
 			);
@@ -259,6 +270,10 @@
 			children = (
 				883011A42269A80A0038B4C5 /* FreshBaseController.h */,
 				883011A32269A80A0038B4C5 /* FreshBaseController.m */,
+				8838D68F226EEE4600A78B14 /* FreshContentViewController.h */,
+				8838D690226EEE4600A78B14 /* FreshContentViewController.m */,
+				8838D692226EEF0900A78B14 /* FreshTableViewController.h */,
+				8838D693226EEF0900A78B14 /* FreshTableViewController.m */,
 				880BF7212269BC1E00665CEF /* FreshPageViewsController.h */,
 				880BF7222269BC1E00665CEF /* FreshPageViewsController.m */,
 			);
@@ -484,12 +499,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				880BF7202269BAEF00665CEF /* FreshPageViewModel.m in Sources */,
+				8838D68E226EEA0F00A78B14 /* FreshDatasViewModel.m in Sources */,
 				8830116A2269A3940038B4C5 /* ViewController.m in Sources */,
 				880BF71D2269B98800665CEF /* FreshViewModel.m in Sources */,
 				880BF6EA2269B62E00665CEF /* FreshModel.m in Sources */,
 				880BF7232269BC1E00665CEF /* FreshPageViewsController.m in Sources */,
 				880BF6E32269AA1200665CEF /* FreshTableViewCell.m in Sources */,
 				880BF73B2269CDD100665CEF /* UITextField+FreshCategory.m in Sources */,
+				8838D694226EEF0900A78B14 /* FreshTableViewController.m in Sources */,
 				880BF7322269C8E300665CEF /* NSDecimalNumber+FreshCategory.m in Sources */,
 				883011752269A3A10038B4C5 /* main.m in Sources */,
 				880BF6E62269AC3B00665CEF /* FreshCollectionViewCell.m in Sources */,
@@ -502,6 +519,7 @@
 				883011A22269A7230038B4C5 /* FreshBaseView.m in Sources */,
 				883011A52269A80A0038B4C5 /* FreshBaseController.m in Sources */,
 				880BF7412269D5FA00665CEF /* MJRefreshComponent+FreshCategory.m in Sources */,
+				8838D691226EEE4600A78B14 /* FreshContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

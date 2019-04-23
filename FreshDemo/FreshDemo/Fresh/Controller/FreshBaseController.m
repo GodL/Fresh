@@ -19,6 +19,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)leftAaction {}
+
+- (void)rightAction {}
+
 /*
 #pragma mark - Navigation
 

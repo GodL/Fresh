@@ -58,4 +58,10 @@
     return _backgroundImageView;
 }
 
+- (void)configurationCellWithItem:(id)value {}
+
++ (NSString *)description {
+    return [NSStringFromClass(self.class) stringByAppendingString:@"_reuseIdentifier"];
+}
+
 @end
