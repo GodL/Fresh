@@ -60,6 +60,10 @@
 
 - (void)configurationCellWithItem:(id)value {}
 
++ (void)registerToTableView:(UITableView *)tableView {
+    [tableView registerClass:self forCellReuseIdentifier:[self description]];
+}
+
 + (NSString *)description {
     return [NSStringFromClass(self.class) stringByAppendingString:@"_reuseIdentifier"];
 }

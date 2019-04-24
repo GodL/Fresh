@@ -19,9 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong,readonly) FreshDatasViewModel *viewModel;
 
-@property (nonatomic,strong,readonly) UIRefreshControl *refreshControl;//default is nil.
+@property (nonatomic,strong,readonly) UIRefreshControl *refreshControl;
 
-#pragma mark- Overrided_tableView
+#pragma mark- Overrided
 - (FreshTableView *)initializationTableView;
 
 - (void)registerCell;

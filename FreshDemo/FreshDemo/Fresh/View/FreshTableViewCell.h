@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)configurationCellWithItem:(id)value;
 
++ (void)registerToTableView:(UITableView *)tableView;
+
 @end
 
 NS_ASSUME_NONNULL_END

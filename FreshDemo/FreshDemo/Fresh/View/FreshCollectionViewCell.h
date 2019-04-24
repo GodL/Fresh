@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setupSubViews;
 
+- (void)configurationCellWithItem:(id)value;
+
++ (void)registerToTableView:(UICollectionView *)collectionView;
+
 @end
 
 NS_ASSUME_NONNULL_END

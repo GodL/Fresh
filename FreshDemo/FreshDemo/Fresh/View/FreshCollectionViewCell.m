@@ -25,6 +25,16 @@
     
 }
 
+- (void)configurationCellWithItem:(id)value {}
+
++ (void)registerToTableView:(UICollectionView *)collectionView {
+    [collectionView registerClass:self forCellWithReuseIdentifier:[self description]];
+}
+
++ (NSString *)description {
+    return [NSStringFromClass(self.class) stringByAppendingString:@"_reuseIdentifier"];
+}
+
 - (UIImageView *)backgroundImageView {
     if (!_backgroundImageView) {
         _backgroundImageView = [UIImageView new];

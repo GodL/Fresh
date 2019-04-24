@@ -20,6 +20,8 @@
 		880BF7382269CAB900665CEF /* UILabel+FreshCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BF7372269CAB900665CEF /* UILabel+FreshCategory.m */; };
 		880BF73B2269CDD100665CEF /* UITextField+FreshCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BF73A2269CDD100665CEF /* UITextField+FreshCategory.m */; };
 		880BF7412269D5FA00665CEF /* MJRefreshComponent+FreshCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BF7402269D5FA00665CEF /* MJRefreshComponent+FreshCategory.m */; };
+		882B60AE227009D1006B9B5B /* FreshCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B60AD227009D1006B9B5B /* FreshCollectionViewController.m */; };
+		882B60B122700A06006B9B5B /* FreshCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B60B022700A06006B9B5B /* FreshCollectionView.m */; };
 		883011672269A3940038B4C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 883011662269A3940038B4C5 /* AppDelegate.m */; };
 		8830116A2269A3940038B4C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883011692269A3940038B4C5 /* ViewController.m */; };
 		8830116D2269A3940038B4C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8830116B2269A3940038B4C5 /* Main.storyboard */; };
@@ -85,6 +87,10 @@
 		880BF73F2269D5FA00665CEF /* MJRefreshComponent+FreshCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MJRefreshComponent+FreshCategory.h"; sourceTree = "<group>"; };
 		880BF7402269D5FA00665CEF /* MJRefreshComponent+FreshCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MJRefreshComponent+FreshCategory.m"; sourceTree = "<group>"; };
 		880BF7422269D6B100665CEF /* FreshCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshCategory.h; sourceTree = "<group>"; };
+		882B60AC227009D1006B9B5B /* FreshCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshCollectionViewController.h; sourceTree = "<group>"; };
+		882B60AD227009D1006B9B5B /* FreshCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshCollectionViewController.m; sourceTree = "<group>"; };
+		882B60AF22700A06006B9B5B /* FreshCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshCollectionView.h; sourceTree = "<group>"; };
+		882B60B022700A06006B9B5B /* FreshCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshCollectionView.m; sourceTree = "<group>"; };
 		883011622269A3940038B4C5 /* FreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883011652269A3940038B4C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		883011662269A3940038B4C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -274,6 +280,8 @@
 				8838D690226EEE4600A78B14 /* FreshContentViewController.m */,
 				8838D692226EEF0900A78B14 /* FreshTableViewController.h */,
 				8838D693226EEF0900A78B14 /* FreshTableViewController.m */,
+				882B60AC227009D1006B9B5B /* FreshCollectionViewController.h */,
+				882B60AD227009D1006B9B5B /* FreshCollectionViewController.m */,
 				880BF7212269BC1E00665CEF /* FreshPageViewsController.h */,
 				880BF7222269BC1E00665CEF /* FreshPageViewsController.m */,
 			);
@@ -301,6 +309,8 @@
 				8830119E2269A5B80038B4C5 /* FreshTableView.m */,
 				880BF6E12269AA1200665CEF /* FreshTableViewCell.h */,
 				880BF6E22269AA1200665CEF /* FreshTableViewCell.m */,
+				882B60AF22700A06006B9B5B /* FreshCollectionView.h */,
+				882B60B022700A06006B9B5B /* FreshCollectionView.m */,
 				880BF6E42269AC3B00665CEF /* FreshCollectionViewCell.h */,
 				880BF6E52269AC3B00665CEF /* FreshCollectionViewCell.m */,
 				883011A02269A7230038B4C5 /* FreshBaseView.h */,
@@ -502,6 +512,7 @@
 				8838D68E226EEA0F00A78B14 /* FreshDatasViewModel.m in Sources */,
 				8830116A2269A3940038B4C5 /* ViewController.m in Sources */,
 				880BF71D2269B98800665CEF /* FreshViewModel.m in Sources */,
+				882B60AE227009D1006B9B5B /* FreshCollectionViewController.m in Sources */,
 				880BF6EA2269B62E00665CEF /* FreshModel.m in Sources */,
 				880BF7232269BC1E00665CEF /* FreshPageViewsController.m in Sources */,
 				880BF6E32269AA1200665CEF /* FreshTableViewCell.m in Sources */,
@@ -512,6 +523,7 @@
 				880BF6E62269AC3B00665CEF /* FreshCollectionViewCell.m in Sources */,
 				880BF6ED2269B78100665CEF /* Fresh2LabelView.m in Sources */,
 				8830119F2269A5B80038B4C5 /* FreshTableView.m in Sources */,
+				882B60B122700A06006B9B5B /* FreshCollectionView.m in Sources */,
 				883011672269A3940038B4C5 /* AppDelegate.m in Sources */,
 				880BF7382269CAB900665CEF /* UILabel+FreshCategory.m in Sources */,
 				880BF7352269C90B00665CEF /* NSString+FreshCategory.m in Sources */,

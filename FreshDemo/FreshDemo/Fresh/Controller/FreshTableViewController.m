@@ -26,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self layoutTableView];
-    [self.tableView beginRefresh];
     // Do any additional setup after loading the view.
 }
 
