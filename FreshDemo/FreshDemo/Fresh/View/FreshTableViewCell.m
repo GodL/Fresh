@@ -8,6 +8,7 @@
 
 #import "FreshTableViewCell.h"
 #import <Masonry/Masonry.h>
+@import ObjectiveC.runtime;
 
 @implementation FreshTableViewCell
 
@@ -69,3 +70,4 @@
 }
 
 @end
+

@@ -1,8 +1,8 @@
 //
-//  FreshTableView.h
+//  FreshCollectionView.h
 //  FreshDemo
 //
-//  Created by imac on 2019/4/19.
+//  Created by imac on 2019/4/24.
 //  Copyright © 2019 com.GodL.github. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FreshTableView : UITableView
+@interface FreshCollectionView : UICollectionView
 
 @end
 

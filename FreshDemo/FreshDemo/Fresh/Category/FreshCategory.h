@@ -14,5 +14,6 @@
 #import "UILabel+FreshCategory.h"
 #import "UITextField+FreshCategory.h"
 #import "MJRefreshComponent+FreshCategory.h"
+#import "UIScrollView+RefreshView.h"
 
 #endif /* FreshCategory_h */

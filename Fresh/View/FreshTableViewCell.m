@@ -8,6 +8,7 @@
 
 #import "FreshTableViewCell.h"
 #import <Masonry/Masonry.h>
+@import ObjectiveC.runtime;
 
 @implementation FreshTableViewCell
 
@@ -58,4 +59,15 @@
     return _backgroundImageView;
 }
 
+- (void)configurationCellWithItem:(id)value {}
+
++ (void)registerToTableView:(UITableView *)tableView {
+    [tableView registerClass:self forCellReuseIdentifier:[self description]];
+}
+
++ (NSString *)description {
+    return [NSStringFromClass(self.class) stringByAppendingString:@"_reuseIdentifier"];
+}
+
 @end
+

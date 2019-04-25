@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "Fresh"
-  s.version      = "1.0.5"
+  s.version      = "1.1.0"
   s.summary      = 'Base object for iOS'
   s.homepage     = "https://github.com/GodL/Fresh.git"
   s.license      = "MIT"
@@ -48,6 +48,8 @@ Pod::Spec.new do |s|
   s.subspec 'Controller' do |ss|
   ss.dependency 'Masonry'
   ss.dependency 'StreamKit'
+  ss.dependency 'View'
+  ss.dependency 'Category'
   ss.source_files = 'Fresh/Controller/*.{h,m}'
   end
 end
