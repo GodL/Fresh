@@ -48,8 +48,8 @@ Pod::Spec.new do |s|
   s.subspec 'Controller' do |ss|
   ss.dependency 'Masonry'
   ss.dependency 'StreamKit'
-  ss.dependency 'View'
-  ss.dependency 'Category'
+  ss.dependency 'Fresh/View'
+  ss.dependency 'Fresh/Category'
   ss.source_files = 'Fresh/Controller/*.{h,m}'
   end
 end
