@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
   ss.dependency 'StreamKit'
   ss.dependency 'Fresh/View'
   ss.dependency 'Fresh/Category'
-  ss.dependency 'Fresg/ViewModel'
+  ss.dependency 'Fresh/ViewModel'
   ss.source_files = 'Fresh/Controller/*.{h,m}'
   end
 end
