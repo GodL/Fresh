@@ -10,6 +10,12 @@
 
 @implementation FreshModel
 
+#ifdef DEBUG
+- (void)dealloc {
+    NSLog(@"%@ delloc",NSStringFromClass(self.class));
+}
+#endif
+
 @end
 
 @implementation NSArray (Fresh)

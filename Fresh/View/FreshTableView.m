@@ -23,7 +23,11 @@
     return self;
 }
 
-
+#ifdef DEBUG
+- (void)dealloc {
+    NSLog(@"%@ delloc",NSStringFromClass(self.class));
+}
+#endif
 
 /*
 // Only override drawRect: if you perform custom drawing.

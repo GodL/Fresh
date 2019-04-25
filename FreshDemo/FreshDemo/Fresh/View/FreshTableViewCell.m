@@ -69,5 +69,11 @@
     return [NSStringFromClass(self.class) stringByAppendingString:@"_reuseIdentifier"];
 }
 
+#ifdef DEBUG
+- (void)dealloc {
+    NSLog(@"%@ delloc",NSStringFromClass(self.class));
+}
+#endif
+
 @end
 

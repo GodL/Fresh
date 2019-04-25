@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FreshBaseController : UIViewController
 
-- (void)leftAaction;
+- (void)leftAction;
 
 - (void)rightAction;
 

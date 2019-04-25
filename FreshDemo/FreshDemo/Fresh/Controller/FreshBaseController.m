@@ -19,9 +19,15 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)leftAaction {}
+- (void)leftAction {}
 
 - (void)rightAction {}
+
+#ifdef DEBUG
+- (void)dealloc {
+    NSLog(@"%@ delloc",NSStringFromClass(self.class));
+}
+#endif
 
 /*
 #pragma mark - Navigation

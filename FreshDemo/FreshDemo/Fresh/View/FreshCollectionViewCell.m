@@ -47,4 +47,10 @@
     return _backgroundImageView;
 }
 
+#ifdef DEBUG
+- (void)dealloc {
+    NSLog(@"%@ delloc",NSStringFromClass(self.class));
+}
+#endif
+
 @end

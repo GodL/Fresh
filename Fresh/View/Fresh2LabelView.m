@@ -31,7 +31,7 @@
     
     [_rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.offset(-self.labelInsets.right);
-        make.centerY.height.equalTo(_leftLabel);
+        make.centerY.height.equalTo(self.leftLabel);
         make.width.mas_equalTo(200);
     }];
 }
