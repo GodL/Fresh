@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (SKSignal *)enabledSignal;
 
-- (SKSignal *)commandSignal;
+- (SKSignal *)commandSignal:(nullable id)executeValue;
 
 @end
 

@@ -18,7 +18,7 @@
         @weakify(self)
         _command = [[SKCommand alloc] initWithEnabled:[self enabledSignal] signalBlock:^SKSignal *(id value) {
             @strongify(self)
-            return [self commandSignal];
+            return [self commandSignal:value];
         }];
     }
     return _command;
@@ -36,7 +36,7 @@
     return nil;
 }
 
-- (SKSignal *)commandSignal {
+- (SKSignal *)commandSignal:(id)executeValue {
     return nil;
 }
 

@@ -19,7 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self layoutContentView];
+    [self.view addSubview:self.contentView];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self layoutContentView];
+    });
+    
     // Do any additional setup after lo ading the view.
 }
 
@@ -27,14 +31,14 @@
     if (!_contentView) {
         _contentView = [UIImageView new];
         _contentView.userInteractionEnabled = YES;
-        [self.view addSubview:_contentView];
     }
     return _contentView;
 }
 
 - (void)layoutContentView {
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.insets(UIEdgeInsetsZero);
+        make.left.right.top.offset(0);
+        make.height.mas_equalTo([self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
     }];
 }
 
