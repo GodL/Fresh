@@ -44,7 +44,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:URL_HOST];
+        _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:URL_HOST]];
         _sessionManager.operationQueue.maxConcurrentOperationCount = 5;
         _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
         _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
