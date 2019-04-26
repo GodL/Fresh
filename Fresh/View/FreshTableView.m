@@ -15,6 +15,7 @@
     if (self) {
         self.estimatedSectionHeaderHeight = 0;
         self.estimatedSectionFooterHeight = 0;
+        self.backgroundColor = UIColor.whiteColor;
         self.tableFooterView = UIView.new;
         if (style == UITableViewStyleGrouped) {
             self.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIApplication sharedApplication].keyWindow.bounds.size.width, CGFLOAT_MIN)];

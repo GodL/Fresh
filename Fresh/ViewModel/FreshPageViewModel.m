@@ -21,7 +21,7 @@
 @synthesize footerCommand = _footerCommand;
 @synthesize hasMoreDataSignal = _hasMoreDataSignal;
 
-- (SKSignal *)commandSignal {
+- (SKSignal *)commandSignal:(id)executeValue {
     NSAssert(NO, @"should be overrided by subclass");
     return nil;
 }
@@ -35,7 +35,7 @@
         @weakify(self)
         _headerCommand = [[SKCommand alloc] initWithSignalBlock:^SKSignal *(id value) {
             @strongify(self)
-            return [[self commandSignal] initially:^{
+            return [[self commandSignal:value] initially:^{
                 @strongify(self)
                 self.page = 1;
             }];
@@ -49,7 +49,7 @@
         @weakify(self)
         _footerCommand = [[SKCommand alloc] initWithSignalBlock:^SKSignal *(id value) {
             @strongify(self)
-            return [[self commandSignal] initially:^{
+            return [[self commandSignal:value] initially:^{
                 @strongify(self)
                 self.page ++ ;
             }];
