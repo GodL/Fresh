@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FreshCollectionViewController : FreshBaseController<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic,strong,readonly) FreshCollectionView *collectionView;
+@property (nonatomic,strong,readonly) __kindof FreshCollectionView *collectionView;
 
-@property (nonatomic,strong,readonly) FreshDatasViewModel *viewModel;
+@property (nonatomic,strong,readonly) __kindof FreshDatasViewModel *viewModel;
 
 #pragma mark- Overrided
-- (FreshCollectionView *)initializationCollectionView;
+- (__kindof FreshCollectionView *)initializationCollectionView;
 
 - (void)registerCell;
 
@@ -28,9 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (__kindof UICollectionViewCell *)cellForItem:(NSIndexPath *)indexPath;
 
-- (FreshDatasViewModel *)initializationViewModel;
+- (__kindof FreshDatasViewModel *)initializationViewModel;
 
-- (UIRefreshControl *)initializationRefreshControl;
+- (__kindof UIRefreshControl *)initializationRefreshControl;
 
 @end
 

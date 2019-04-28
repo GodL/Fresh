@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class SKCommand;
 @class SKSignal;
 
-@interface FreshPageViewModel<Element> : FreshDatasViewModel
+@interface FreshPageViewModel<__covariant Element> : FreshDatasViewModel
 
 @property (nonatomic,assign,readonly) NSUInteger page;
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FreshDatasViewModel<Element> : FreshViewModel
+@interface FreshDatasViewModel<__covariant Element> : FreshViewModel
 
 @property (nonatomic,copy) NSArray<Element> *datas;
 

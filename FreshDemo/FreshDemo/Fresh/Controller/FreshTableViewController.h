@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FreshTableViewController : FreshBaseController<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic,strong,readonly) FreshTableView *tableView;
+@property (nonatomic,strong,readonly) __kindof FreshTableView *tableView;
 
-@property (nonatomic,strong,readonly) FreshDatasViewModel *viewModel;
+@property (nonatomic,strong,readonly) __kindof FreshDatasViewModel *viewModel;
 
 #pragma mark- Overrided
-- (FreshTableView *)initializationTableView;
+- (__kindof FreshTableView *)initializationTableView;
 
 - (void)registerCell;
 
@@ -28,9 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (__kindof UITableViewCell *)cellForItem:(NSIndexPath *)indexPath;
 
-- (FreshDatasViewModel *)initializationViewModel;
+- (__kindof FreshDatasViewModel *)initializationViewModel;
 
-- (UIRefreshControl *)initializationRefreshControl;
+- (__kindof UIRefreshControl *)initializationRefreshControl;
 
 @end
 
