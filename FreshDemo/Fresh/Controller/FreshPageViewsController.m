@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self layoutSegmentedControl];
+    [self layoutPageController];
     // Do any additional setup after loading the view.
 }
 

@@ -222,6 +222,7 @@
 		883011592269A3940038B4C5 = {
 			isa = PBXGroup;
 			children = (
+				8830119B2269A57E0038B4C5 /* Fresh */,
 				883011642269A3940038B4C5 /* FreshDemo */,
 				8830117D2269A3A10038B4C5 /* FreshDemoTests */,
 				883011882269A3A10038B4C5 /* FreshDemoUITests */,
@@ -244,7 +245,6 @@
 		883011642269A3940038B4C5 /* FreshDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8830119B2269A57E0038B4C5 /* Fresh */,
 				883011652269A3940038B4C5 /* AppDelegate.h */,
 				883011662269A3940038B4C5 /* AppDelegate.m */,
 				883011682269A3940038B4C5 /* ViewController.h */,
