@@ -43,6 +43,7 @@
         }
         [self registerCell];
         [self.view addSubview:_collectionView];
+        SKSelector(_collectionView, reloadData) = self.viewModel.command.executeSignals.switchToLatest;
     }
     return _collectionView;
 }

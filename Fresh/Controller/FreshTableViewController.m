@@ -42,6 +42,7 @@
         }
         [self registerCell];
         [self.view addSubview:_tableView];
+        SKSelector(_tableView, reloadData) = self.viewModel.command.executeSignals.switchToLatest;
     }
     return _tableView;
 }
@@ -49,7 +50,6 @@
 - (FreshDatasViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [self initializationViewModel];
-        SKSelector(self.tableView, reloadData) = _viewModel.command.executeSignals.switchToLatest;
     }
     return _viewModel;
 }
