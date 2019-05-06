@@ -30,6 +30,10 @@
     return 20;
 }
 
+- (SKCommand *)command {
+    return self.headerCommand;
+}
+
 - (SKCommand *)headerCommand {
     if (!_headerCommand) {
         @weakify(self)

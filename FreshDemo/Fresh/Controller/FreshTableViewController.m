@@ -26,20 +26,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self layoutTableView];
+    [self setupRefreshControl];
     // Do any additional setup after loading the view.
 }
 
 - (FreshTableView *)tableView {
     if (!_tableView) {
         _tableView = [self initializationTableView];
-        UIRefreshControl *refreshControl = [self initializationRefreshControl];
-        if (refreshControl) {
-            _tableView.refreshView = refreshControl;
-            refreshControl.sk_command = self.viewModel.command;
-            [[SKScheduler mainThreadScheduler] schedule:^{
-                [self.tableView beginRefresh];
-            }];
-        }
         [self registerCell];
         [self.view addSubview:_tableView];
         SKSelector(_tableView, reloadData) = self.viewModel.command.executeSignals.switchToLatest;
@@ -84,6 +77,17 @@
 
 - (UIRefreshControl *)initializationRefreshControl {
     return nil;
+}
+
+- (void)setupRefreshControl {
+    UIRefreshControl *refreshControl = [self initializationRefreshControl];
+    if (refreshControl) {
+        self.tableView.refreshView = refreshControl;
+        refreshControl.sk_command = self.viewModel.command;
+        [[SKScheduler mainThreadScheduler] schedule:^{
+            [self.tableView beginRefresh];
+        }];
+    }
 }
 
 #pragma mark- UITableViewDataSource
