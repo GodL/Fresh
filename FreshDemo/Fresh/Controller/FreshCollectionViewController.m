@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self layoutCollectionView];
+    [self setupRefreshControl];
     // Do any additional setup after loading the view.
 }
 
@@ -33,14 +35,6 @@
         _collectionView = [self initializationCollectionView];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        UIRefreshControl *refreshControl = [self initializationRefreshControl];
-        if (refreshControl) {
-            _collectionView.refreshView = refreshControl;
-            refreshControl.sk_command = self.viewModel.command;
-            [[SKScheduler mainThreadScheduler] schedule:^{
-                [self.collectionView beginRefresh];
-            }];
-        }
         [self registerCell];
         [self.view addSubview:_collectionView];
         SKSelector(_collectionView, reloadData) = self.viewModel.command.executeSignals.switchToLatest;
@@ -82,6 +76,17 @@
 
 - (UIRefreshControl *)initializationRefreshControl {
     return nil;
+}
+
+- (void)setupRefreshControl {
+    UIRefreshControl *refreshControl = [self initializationRefreshControl];
+    if (refreshControl) {
+        _collectionView.refreshView = refreshControl;
+        refreshControl.sk_command = self.viewModel.command;
+        [[SKScheduler mainThreadScheduler] schedule:^{
+            [self.collectionView beginRefresh];
+        }];
+    }
 }
 
 #pragma mark- UICollectionViewDataSource

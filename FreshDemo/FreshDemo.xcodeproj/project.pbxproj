@@ -38,6 +38,7 @@
 		8838D691226EEE4600A78B14 /* FreshContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D690226EEE4600A78B14 /* FreshContentViewController.m */; };
 		8838D694226EEF0900A78B14 /* FreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D693226EEF0900A78B14 /* FreshTableViewController.m */; };
 		884B66E3227FD92C00E36023 /* FreshPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B66E2227FD92C00E36023 /* FreshPageTableViewController.m */; };
+		884B66E6227FF16F00E36023 /* FreshPageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B66E5227FF16F00E36023 /* FreshPageCollectionViewController.m */; };
 		E450491ABE7C4220D40C2CA3 /* libPods-FreshDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9134BCCBE898ABCDC5325 /* libPods-FreshDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,8 @@
 		8838D693226EEF0900A78B14 /* FreshTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshTableViewController.m; sourceTree = "<group>"; };
 		884B66E1227FD92C00E36023 /* FreshPageTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshPageTableViewController.h; sourceTree = "<group>"; };
 		884B66E2227FD92C00E36023 /* FreshPageTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshPageTableViewController.m; sourceTree = "<group>"; };
+		884B66E4227FF16F00E36023 /* FreshPageCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshPageCollectionViewController.h; sourceTree = "<group>"; };
+		884B66E5227FF16F00E36023 /* FreshPageCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshPageCollectionViewController.m; sourceTree = "<group>"; };
 		A89911F39DB499F227B6FD61 /* Pods-FreshDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreshDemo/Pods-FreshDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +295,8 @@
 				884B66E2227FD92C00E36023 /* FreshPageTableViewController.m */,
 				882B60AC227009D1006B9B5B /* FreshCollectionViewController.h */,
 				882B60AD227009D1006B9B5B /* FreshCollectionViewController.m */,
+				884B66E4227FF16F00E36023 /* FreshPageCollectionViewController.h */,
+				884B66E5227FF16F00E36023 /* FreshPageCollectionViewController.m */,
 				880BF7212269BC1E00665CEF /* FreshPageViewsController.h */,
 				880BF7222269BC1E00665CEF /* FreshPageViewsController.m */,
 			);
@@ -539,6 +544,7 @@
 				880BF7382269CAB900665CEF /* UILabel+FreshCategory.m in Sources */,
 				880BF7352269C90B00665CEF /* NSString+FreshCategory.m in Sources */,
 				880BF7272269BD2F00665CEF /* FreshNetworkService.m in Sources */,
+				884B66E6227FF16F00E36023 /* FreshPageCollectionViewController.m in Sources */,
 				883011A22269A7230038B4C5 /* FreshBaseView.m in Sources */,
 				883011A52269A80A0038B4C5 /* FreshBaseController.m in Sources */,
 				884B66E3227FD92C00E36023 /* FreshPageTableViewController.m in Sources */,
