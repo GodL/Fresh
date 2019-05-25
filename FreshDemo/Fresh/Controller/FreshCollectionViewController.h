@@ -13,7 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @class FreshCollectionView;
 @class FreshDatasViewModel;
 
-@interface FreshCollectionViewController : FreshBaseController<UICollectionViewDelegate,UICollectionViewDataSource>
+typedef NS_ENUM(NSInteger,UICollectionViewStyle) {
+    UICollectionViewStylePlain,
+    UICollectionViewStyleGroup
+};
+
+@interface FreshCollectionViewController : FreshBaseController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong,readonly) __kindof FreshCollectionView *collectionView;
 
@@ -22,11 +27,17 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark- Overrided
 - (__kindof FreshCollectionView *)initializationCollectionView;
 
-- (void)registerCell;
+- (NSArray<Class> *)registerCells;
+
+- (NSArray<Class> *)registerReusableViews;
 
 - (void)layoutCollectionView;
 
-- (__kindof UICollectionViewCell *)cellForItem:(NSIndexPath *)indexPath;
+- (UICollectionViewStyle)collectionViewStyle;
+
+- (__kindof UICollectionViewCell *)cellForIndexPath:(NSIndexPath *)indexPath;
+
+- (__kindof UICollectionReusableView *)reusableViewForKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath ;
 
 - (__kindof FreshDatasViewModel *)initializationViewModel;
 

@@ -9,6 +9,7 @@
 #import "FreshCollectionViewController.h"
 #import "FreshCollectionView.h"
 #import "FreshCollectionViewCell.h"
+#import "FreshReusableView.h"
 #import "UIScrollView+RefreshView.h"
 #import "FreshDatasViewModel.h"
 #import <Masonry/Masonry.h>
@@ -35,7 +36,12 @@
         _collectionView = [self initializationCollectionView];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        [self registerCell];
+        [[self registerCells] enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [_collectionView registerClass:obj forCellWithReuseIdentifier:[obj description]];
+        }];
+        [[self registerReusableViews] enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [_collectionView registerClass:obj forSupplementaryViewOfKind:[obj reusableKind] withReuseIdentifier:[obj description]];
+        }];
         [self.view addSubview:_collectionView];
         SKSelector(_collectionView, reloadData) = self.viewModel.command.executeSignals.switchToLatest;
     }
@@ -59,14 +65,22 @@
     return nil;
 }
 
-- (void)registerCell {
-    
+- (NSArray<Class> *)registerCells {
+    return @[];
+}
+
+- (NSArray<Class> *)registerReusableViews {
+    return @[];
 }
 
 - (void)layoutCollectionView {
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.insets(UIEdgeInsetsZero);
     }];
+}
+
+- (UICollectionViewStyle)collectionViewStyle {
+    return UICollectionViewStylePlain;
 }
 
 - (UICollectionViewCell *)cellForItem:(NSIndexPath *)indexPath {
@@ -91,18 +105,24 @@
 
 #pragma mark- UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return self.collectionViewStyle == UICollectionViewStylePlain ? 1 : self.viewModel.datas.count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.viewModel.datas.count;
+    return self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas.count : [self.viewModel.datas[section] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FreshCollectionViewCell *cell = [self cellForItem:indexPath];
-    [cell configurationCellWithItem:self.viewModel.datas[indexPath.row]];
+    FreshCollectionViewCell *cell = [self cellForIndexPath:indexPath];
+    [cell configurationCellWithItem:self.viewModel.datas[indexPath.section][indexPath.row]];
     return cell;
 }
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableView = [self reusableViewForKind:kind atIndexPath:indexPath];
+    return reusableView;
+}
+
 
 /*
 #pragma mark - Navigation

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)configurationCellWithItem:(id)value;
 
-+ (void)registerToTableView:(UICollectionView *)collectionView;
++ (void)registerToCollectionView:(UICollectionView *)collectionView;
 
 @end
 

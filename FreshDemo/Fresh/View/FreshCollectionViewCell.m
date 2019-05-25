@@ -27,7 +27,7 @@
 
 - (void)configurationCellWithItem:(id)value {}
 
-+ (void)registerToTableView:(UICollectionView *)collectionView {
++ (void)registerToCollectionView:(UICollectionView *)collectionView {
     [collectionView registerClass:self forCellWithReuseIdentifier:[self description]];
 }
 

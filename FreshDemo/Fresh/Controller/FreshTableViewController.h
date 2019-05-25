@@ -22,11 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark- Overrided
 - (__kindof FreshTableView *)initializationTableView;
 
-- (void)registerCell;
+- (NSArray<Class>*)registerCells;
 
 - (void)layoutTableView;
 
-- (__kindof UITableViewCell *)cellForItem:(NSIndexPath *)indexPath;
+- (__kindof UITableViewCell *)cellForIndexPath:(NSIndexPath *)indexPath;
 
 - (__kindof FreshDatasViewModel *)initializationViewModel;
 

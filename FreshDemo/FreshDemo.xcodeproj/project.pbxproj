@@ -39,6 +39,7 @@
 		8838D694226EEF0900A78B14 /* FreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D693226EEF0900A78B14 /* FreshTableViewController.m */; };
 		884B66E3227FD92C00E36023 /* FreshPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B66E2227FD92C00E36023 /* FreshPageTableViewController.m */; };
 		884B66E6227FF16F00E36023 /* FreshPageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B66E5227FF16F00E36023 /* FreshPageCollectionViewController.m */; };
+		C98BF3602299765500E9FA6C /* FreshReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BF35F2299765500E9FA6C /* FreshReusableView.m */; };
 		E450491ABE7C4220D40C2CA3 /* libPods-FreshDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9134BCCBE898ABCDC5325 /* libPods-FreshDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		884B66E4227FF16F00E36023 /* FreshPageCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshPageCollectionViewController.h; sourceTree = "<group>"; };
 		884B66E5227FF16F00E36023 /* FreshPageCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshPageCollectionViewController.m; sourceTree = "<group>"; };
 		A89911F39DB499F227B6FD61 /* Pods-FreshDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreshDemo/Pods-FreshDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C98BF35E2299765500E9FA6C /* FreshReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshReusableView.h; sourceTree = "<group>"; };
+		C98BF35F2299765500E9FA6C /* FreshReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +331,8 @@
 				882B60B022700A06006B9B5B /* FreshCollectionView.m */,
 				880BF6E42269AC3B00665CEF /* FreshCollectionViewCell.h */,
 				880BF6E52269AC3B00665CEF /* FreshCollectionViewCell.m */,
+				C98BF35E2299765500E9FA6C /* FreshReusableView.h */,
+				C98BF35F2299765500E9FA6C /* FreshReusableView.m */,
 				883011A02269A7230038B4C5 /* FreshBaseView.h */,
 				883011A12269A7230038B4C5 /* FreshBaseView.m */,
 				880BF6EB2269B78100665CEF /* Fresh2LabelView.h */,
@@ -523,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98BF3602299765500E9FA6C /* FreshReusableView.m in Sources */,
 				880BF7202269BAEF00665CEF /* FreshPageViewModel.m in Sources */,
 				8838D68E226EEA0F00A78B14 /* FreshDatasViewModel.m in Sources */,
 				8830116A2269A3940038B4C5 /* ViewController.m in Sources */,

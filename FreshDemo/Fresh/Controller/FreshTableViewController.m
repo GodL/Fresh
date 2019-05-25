@@ -33,7 +33,9 @@
 - (FreshTableView *)tableView {
     if (!_tableView) {
         _tableView = [self initializationTableView];
-        [self registerCell];
+        [[self registerCells] enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [_tableView registerClass:obj forCellReuseIdentifier:[obj description]];
+        }];
         [self.view addSubview:_tableView];
         SKSelector(_tableView, reloadData) = self.viewModel.command.executeSignals.switchToLatest;
     }
@@ -55,8 +57,8 @@
     return tableView;
 }
 
-- (void)registerCell {
-    
+- (NSArray<Class> *)registerCells {
+    return @[];
 }
 
 - (void)layoutTableView {
@@ -65,7 +67,7 @@
     }];
 }
 
-- (UITableViewCell *)cellForItem:(NSIndexPath *)indexPath {
+- (__kindof UITableViewCell *)cellForIndexPath:(NSIndexPath *)indexPath {
     NSAssert(NO, @"should be overrided by subclass");
     return nil;
 }
@@ -100,7 +102,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FreshTableViewCell *cell = [self cellForItem:indexPath];
+    FreshTableViewCell *cell = [self cellForIndexPath:indexPath];
     id value = tableView.style == UITableViewStyleGrouped ? self.viewModel.datas[indexPath.section][indexPath.row] : self.viewModel.datas[indexPath.row];
     [cell configurationCellWithItem:value];
     return cell;
