@@ -114,7 +114,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FreshCollectionViewCell *cell = [self cellForIndexPath:indexPath];
-    [cell configurationCellWithItem:self.viewModel.datas[indexPath.section][indexPath.row]];
+    id item = self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas[indexPath.row] : self.viewModel.datas[indexPath.section][indexPath.row];
+    [cell configurationCellWithItem:item];
     return cell;
 }
 
