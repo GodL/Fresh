@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "Fresh"
-  s.version      = '1.3.2'
+  s.version      = '1.3.3'
   s.summary      = 'Base object for iOS'
   s.homepage     = "https://github.com/GodL/Fresh.git"
   s.license      = "MIT"
@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Category' do |ss|
+  ss.dependency 'Protocol'
   ss.dependency 'MJRefresh'
   ss.dependency 'StreamKit'
   ss.dependency 'Masonry'
