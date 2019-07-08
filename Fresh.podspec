@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "Fresh"
-  s.version      = '1.3.3'
+  s.version      = '1.3.4'
   s.summary      = 'Base object for iOS'
   s.homepage     = "https://github.com/GodL/Fresh.git"
   s.license      = "MIT"
@@ -23,6 +23,10 @@ Pod::Spec.new do |s|
   ss.source_files = 'FreshDemo/Fresh/Service/*.{h,m}'
   end
 
+  s.subspec 'Protocol' do |ss|
+  ss.source_files = 'FreshDemo/Fresh/Protocol/*.h'
+  end
+  
   s.subspec 'Category' do |ss|
   ss.dependency 'Protocol'
   ss.dependency 'MJRefresh'
@@ -45,9 +49,6 @@ Pod::Spec.new do |s|
   ss.source_files = 'FreshDemo/Fresh/View/*.{h,m}'
   end
  
-  s.subspec 'Protocol' do |ss|
-  ss.source_files = 'FreshDemo/Fresh/Protocol/*.h'
-  end
 
   s.subspec 'Controller' do |ss|
   ss.dependency 'Fresh/Protocol'
