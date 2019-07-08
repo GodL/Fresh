@@ -13,6 +13,7 @@
 #import "UIScrollView+RefreshView.h"
 #import <Masonry/Masonry.h>
 #import <StreamKit/StreamKit.h>
+#import "FreshDatasProtocol.h"
 
 @interface FreshTableViewController ()
 
@@ -98,12 +99,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.tableView.style == UITableViewStyleGrouped ? [self.viewModel.datas[section] count] : self.viewModel.datas.count;
+    return self.tableView.style == UITableViewStyleGrouped ? [((id<FreshDatasProtocol>)self.viewModel.datas[section]).datas count] : self.viewModel.datas.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FreshTableViewCell *cell = [self cellForIndexPath:indexPath];
-    id value = tableView.style == UITableViewStyleGrouped ? self.viewModel.datas[indexPath.section][indexPath.row] : self.viewModel.datas[indexPath.row];
+    id value = tableView.style == UITableViewStyleGrouped ? ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row] : self.viewModel.datas[indexPath.row];
     [cell configurationCellWithItem:value];
     return cell;
 }

@@ -22,6 +22,7 @@
 		880BF7412269D5FA00665CEF /* MJRefreshComponent+FreshCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BF7402269D5FA00665CEF /* MJRefreshComponent+FreshCategory.m */; };
 		882B60AE227009D1006B9B5B /* FreshCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B60AD227009D1006B9B5B /* FreshCollectionViewController.m */; };
 		882B60B122700A06006B9B5B /* FreshCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B60B022700A06006B9B5B /* FreshCollectionView.m */; };
+		882EEA4722D345580016287E /* NSArray+FreshDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = 882EEA4622D345580016287E /* NSArray+FreshDatas.m */; };
 		883011672269A3940038B4C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 883011662269A3940038B4C5 /* AppDelegate.m */; };
 		8830116A2269A3940038B4C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883011692269A3940038B4C5 /* ViewController.m */; };
 		8830116D2269A3940038B4C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8830116B2269A3940038B4C5 /* Main.storyboard */; };
@@ -95,6 +96,9 @@
 		882B60AD227009D1006B9B5B /* FreshCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshCollectionViewController.m; sourceTree = "<group>"; };
 		882B60AF22700A06006B9B5B /* FreshCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshCollectionView.h; sourceTree = "<group>"; };
 		882B60B022700A06006B9B5B /* FreshCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshCollectionView.m; sourceTree = "<group>"; };
+		882EEA4422D343210016287E /* FreshDatasProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshDatasProtocol.h; sourceTree = "<group>"; };
+		882EEA4522D345580016287E /* NSArray+FreshDatas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+FreshDatas.h"; sourceTree = "<group>"; };
+		882EEA4622D345580016287E /* NSArray+FreshDatas.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FreshDatas.m"; sourceTree = "<group>"; };
 		883011622269A3940038B4C5 /* FreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883011652269A3940038B4C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		883011662269A3940038B4C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				880BF73A2269CDD100665CEF /* UITextField+FreshCategory.m */,
 				880BF73F2269D5FA00665CEF /* MJRefreshComponent+FreshCategory.h */,
 				880BF7402269D5FA00665CEF /* MJRefreshComponent+FreshCategory.m */,
+				882EEA4522D345580016287E /* NSArray+FreshDatas.h */,
+				882EEA4622D345580016287E /* NSArray+FreshDatas.m */,
 				880BF7422269D6B100665CEF /* FreshCategory.h */,
 			);
 			path = Category;
@@ -226,6 +232,14 @@
 				880BF7292269C72700665CEF /* FreshMarco.h */,
 			);
 			path = Marco;
+			sourceTree = "<group>";
+		};
+		882EEA4322D343080016287E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				882EEA4422D343210016287E /* FreshDatasProtocol.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		883011592269A3940038B4C5 = {
@@ -309,6 +323,7 @@
 		8830119B2269A57E0038B4C5 /* Fresh */ = {
 			isa = PBXGroup;
 			children = (
+				882EEA4322D343080016287E /* Protocol */,
 				880BF7282269C40E00665CEF /* Marco */,
 				880BF7242269BD1200665CEF /* Service */,
 				880BF6EE2269B7F400665CEF /* Category */,
@@ -554,6 +569,7 @@
 				883011A22269A7230038B4C5 /* FreshBaseView.m in Sources */,
 				883011A52269A80A0038B4C5 /* FreshBaseController.m in Sources */,
 				884B66E3227FD92C00E36023 /* FreshPageTableViewController.m in Sources */,
+				882EEA4722D345580016287E /* NSArray+FreshDatas.m in Sources */,
 				880BF7412269D5FA00665CEF /* MJRefreshComponent+FreshCategory.m in Sources */,
 				8838D691226EEE4600A78B14 /* FreshContentViewController.m in Sources */,
 			);
