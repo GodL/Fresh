@@ -14,6 +14,7 @@
 #import "FreshDatasViewModel.h"
 #import <Masonry/Masonry.h>
 #import <StreamKit/StreamKit.h>
+#import "FreshDatasProtocol.h"
 
 @interface FreshCollectionViewController ()
 
@@ -105,16 +106,16 @@
 
 #pragma mark- UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.collectionViewStyle == UICollectionViewStylePlain ? 1 : self.viewModel.datas.count;
+    return self.collectionViewStyle == UICollectionViewStylePlain ? 1 : ((id<FreshDatasProtocol>)self.viewModel.datas).datas.count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas.count : [self.viewModel.datas[section] count];
+    return self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas.count : [((id<FreshDatasProtocol>)self.viewModel.datas[section]).datas count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FreshCollectionViewCell *cell = [self cellForIndexPath:indexPath];
-    id item = self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas[indexPath.row] : self.viewModel.datas[indexPath.section][indexPath.row];
+    id item = self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas[indexPath.row] : ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row];
     [cell configurationCellWithItem:item];
     return cell;
 }
