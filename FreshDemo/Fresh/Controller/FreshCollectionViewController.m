@@ -106,7 +106,7 @@
 
 #pragma mark- UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.collectionViewStyle == UICollectionViewStylePlain ? 1 : ((id<FreshDatasProtocol>)self.viewModel.datas).datas.count;
+    return self.collectionViewStyle == UICollectionViewStylePlain ? 1 : self.viewModel.datas.count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
