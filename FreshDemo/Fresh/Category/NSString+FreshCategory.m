@@ -19,7 +19,7 @@
 }
 
 - (BOOL)isPhoneNumber {
-    return self.length > 0;
+    return self.length == 11 && [self hasPrefix:@"1"];
 }
 
 - (BOOL)isValidateByRegex:(NSString *)regex {
