@@ -25,11 +25,9 @@
 
 - (void)rightAction {}
 
-#ifdef DEBUG
 - (void)dealloc {
     NSLog(@"%@ delloc",NSStringFromClass(self.class));
 }
-#endif
 
 /*
 #pragma mark - Navigation
