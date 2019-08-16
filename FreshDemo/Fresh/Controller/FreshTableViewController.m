@@ -23,6 +23,7 @@
 
 @synthesize tableView = _tableView;
 @synthesize viewModel = _viewModel;
+@synthesize refreshControl = _refreshControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,6 +49,13 @@
         _viewModel = [self initializationViewModel];
     }
     return _viewModel;
+}
+
+- (UIRefreshControl *)refreshControl {
+    if (!_refreshControl) {
+        _refreshControl = [self initializationRefreshControl];
+    }
+    return _refreshControl;
 }
 
 - (FreshTableView *)initializationTableView {
@@ -83,7 +91,7 @@
 }
 
 - (void)setupRefreshControl {
-    UIRefreshControl *refreshControl = [self initializationRefreshControl];
+    UIRefreshControl *refreshControl = [self refreshControl];
     if (refreshControl) {
         self.tableView.refreshView = refreshControl;
         refreshControl.sk_command = self.viewModel.command;

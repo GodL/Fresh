@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong,readonly) __kindof FreshTableView *tableView;
 
+@property (nonatomic,strong,readonly) __kindof UIRefreshControl *refreshControl;
+
 @property (nonatomic,strong,readonly) __kindof FreshDatasViewModel *viewModel;
 
 #pragma mark- Overrided

@@ -22,6 +22,8 @@ typedef NS_ENUM(NSInteger,UICollectionViewStyle) {
 
 @property (nonatomic,strong,readonly) __kindof FreshCollectionView *collectionView;
 
+@property (nonatomic,strong,readonly) __kindof UIRefreshControl *refreshControl;
+
 @property (nonatomic,strong,readonly) __kindof FreshDatasViewModel *viewModel;
 
 #pragma mark- Overrided

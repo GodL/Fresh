@@ -24,6 +24,7 @@
 
 @synthesize collectionView = _collectionView;
 @synthesize viewModel = _viewModel;
+@synthesize refreshControl = _refreshControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,6 +55,13 @@
         _viewModel = [self initializationViewModel];
     }
     return _viewModel;
+}
+
+- (UIRefreshControl *)refreshControl {
+    if (!_refreshControl) {
+        _refreshControl = [self initializationRefreshControl];
+    }
+    return _refreshControl;
 }
 
 - (FreshCollectionView *)initializationCollectionView {
@@ -94,7 +102,7 @@
 }
 
 - (void)setupRefreshControl {
-    UIRefreshControl *refreshControl = [self initializationRefreshControl];
+    UIRefreshControl *refreshControl = [self refreshControl];
     if (refreshControl) {
         _collectionView.refreshView = refreshControl;
         refreshControl.sk_command = self.viewModel.command;
