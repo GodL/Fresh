@@ -35,6 +35,7 @@
 		883011A22269A7230038B4C5 /* FreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 883011A12269A7230038B4C5 /* FreshBaseView.m */; };
 		883011A52269A80A0038B4C5 /* FreshBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883011A32269A80A0038B4C5 /* FreshBaseController.m */; };
 		88309FBC2271995900FA91A8 /* UIScrollView+RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88309FBB2271995900FA91A8 /* UIScrollView+RefreshView.m */; };
+		8830F7D423163B5600D7D412 /* Fresh2TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8830F7D323163B5600D7D412 /* Fresh2TextView.m */; };
 		8838D68E226EEA0F00A78B14 /* FreshDatasViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D68D226EEA0F00A78B14 /* FreshDatasViewModel.m */; };
 		8838D691226EEE4600A78B14 /* FreshContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D690226EEE4600A78B14 /* FreshContentViewController.m */; };
 		8838D694226EEF0900A78B14 /* FreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838D693226EEF0900A78B14 /* FreshTableViewController.m */; };
@@ -123,6 +124,8 @@
 		883011A42269A80A0038B4C5 /* FreshBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshBaseController.h; sourceTree = "<group>"; };
 		88309FBA2271995900FA91A8 /* UIScrollView+RefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+RefreshView.h"; sourceTree = "<group>"; };
 		88309FBB2271995900FA91A8 /* UIScrollView+RefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+RefreshView.m"; sourceTree = "<group>"; };
+		8830F7D223163B5600D7D412 /* Fresh2TextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fresh2TextView.h; sourceTree = "<group>"; };
+		8830F7D323163B5600D7D412 /* Fresh2TextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fresh2TextView.m; sourceTree = "<group>"; };
 		8838D68C226EEA0F00A78B14 /* FreshDatasViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshDatasViewModel.h; sourceTree = "<group>"; };
 		8838D68D226EEA0F00A78B14 /* FreshDatasViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshDatasViewModel.m; sourceTree = "<group>"; };
 		8838D68F226EEE4600A78B14 /* FreshContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshContentViewController.h; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				883011A12269A7230038B4C5 /* FreshBaseView.m */,
 				880BF6EB2269B78100665CEF /* Fresh2LabelView.h */,
 				880BF6EC2269B78100665CEF /* Fresh2LabelView.m */,
+				8830F7D223163B5600D7D412 /* Fresh2TextView.h */,
+				8830F7D323163B5600D7D412 /* Fresh2TextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -560,6 +565,7 @@
 				88309FBC2271995900FA91A8 /* UIScrollView+RefreshView.m in Sources */,
 				880BF6ED2269B78100665CEF /* Fresh2LabelView.m in Sources */,
 				8830119F2269A5B80038B4C5 /* FreshTableView.m in Sources */,
+				8830F7D423163B5600D7D412 /* Fresh2TextView.m in Sources */,
 				882B60B122700A06006B9B5B /* FreshCollectionView.m in Sources */,
 				883011672269A3940038B4C5 /* AppDelegate.m in Sources */,
 				880BF7382269CAB900665CEF /* UILabel+FreshCategory.m in Sources */,
