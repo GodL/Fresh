@@ -39,7 +39,7 @@
             [_tableView registerClass:obj forCellReuseIdentifier:[obj description]];
         }];
         [self.view addSubview:_tableView];
-        SKSelector(_tableView, reloadData) = self.viewModel.command.executeSignals.switchToLatest;
+        SKSelector(_tableView, reloadData) = [self.viewModel.command.executeSignals.switchToLatest takeUntil:self.deallocSignal];
     }
     return _tableView;
 }

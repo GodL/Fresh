@@ -45,7 +45,7 @@
             [_collectionView registerClass:obj forSupplementaryViewOfKind:[obj reusableKind] withReuseIdentifier:[obj description]];
         }];
         [self.view addSubview:_collectionView];
-        SKSelector(_collectionView, reloadData) = self.viewModel.command.executeSignals.switchToLatest;
+        SKSelector(_collectionView, reloadData) = [self.viewModel.command.executeSignals.switchToLatest takeUntil:self.deallocSignal];
     }
     return _collectionView;
 }

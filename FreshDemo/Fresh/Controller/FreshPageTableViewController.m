@@ -39,7 +39,7 @@
         NSAssert(self.viewModel == nil || [self.viewModel isKindOfClass:FreshPageViewModel.class], @"must be pageViewModel");
         footer.sk_command = self.viewModel.footerCommand;
         self.tableView.mj_footer = footer;
-        SKSelector(self.tableView, reloadData) = self.viewModel.footerCommand.executeSignals.switchToLatest;
+        SKSelector(self.tableView, reloadData) = [self.viewModel.footerCommand.executeSignals.switchToLatest takeUntil:self.deallocSignal];
         SK(footer,hidden) = self.viewModel.hasMoreDataSignal;
     }
 }
