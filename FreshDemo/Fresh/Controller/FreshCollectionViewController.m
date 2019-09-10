@@ -112,6 +112,8 @@
     }
 }
 
+- (void)collectionViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath {}
+
 #pragma mark- UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.collectionViewStyle == UICollectionViewStylePlain ? 1 : self.viewModel.datas.count;
@@ -133,6 +135,10 @@
     return reusableView;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    id item = self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas[indexPath.row] : ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row];
+    [self collectionViewDidSelectedWithModel:item atIndexPath:indexPath];
+}
 
 /*
 #pragma mark - Navigation

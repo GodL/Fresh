@@ -101,6 +101,8 @@
     }
 }
 
+- (void)tableViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath {}
+
 #pragma mark- UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.tableView.style == UITableViewStyleGrouped ? self.viewModel.datas.count : 1;
@@ -115,6 +117,11 @@
     id value = tableView.style == UITableViewStyleGrouped ? ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row] : self.viewModel.datas[indexPath.row];
     [cell configurationCellWithItem:value];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    id value = tableView.style == UITableViewStyleGrouped ? ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row] : self.viewModel.datas[indexPath.row];
+    [self tableViewDidSelectedWithModel:value atIndexPath:indexPath];
 }
 
 /*
