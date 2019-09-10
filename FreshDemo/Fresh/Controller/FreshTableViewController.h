@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (__kindof UITableViewCell *)cellForIndexPath:(NSIndexPath *)indexPath;
 
-- (void)tableViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath 
+- (void)tableViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath;
 
 - (__kindof FreshDatasViewModel *)initializationViewModel;
 
