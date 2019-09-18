@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol FreshDatasProtocol <NSObject>
 
 - (NSArray *)datas;
+
 @end
 
 NS_ASSUME_NONNULL_END

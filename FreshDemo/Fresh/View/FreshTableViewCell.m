@@ -8,7 +8,7 @@
 
 #import "FreshTableViewCell.h"
 #import <Masonry/Masonry.h>
-@import ObjectiveC.runtime;
+#import <objc/runtime.h>
 
 @implementation FreshTableViewCell
 
@@ -62,11 +62,7 @@
 - (void)configurationCellWithItem:(id)value {}
 
 + (void)registerToTableView:(UITableView *)tableView {
-    [tableView registerClass:self forCellReuseIdentifier:[self description]];
-}
-
-+ (NSString *)description {
-    return [NSStringFromClass(self.class) stringByAppendingString:@"_reuseIdentifier"];
+    [tableView registerClass:self forCellReuseIdentifier:[[self cellModel] description]];
 }
 
 #ifdef DEBUG
@@ -74,6 +70,11 @@
     NSLog(@"%@ delloc",NSStringFromClass(self.class));
 }
 #endif
+
+#pragma mark- FreshCellModelable
++ (Class)cellModel {
+    return nil;
+}
 
 @end
 

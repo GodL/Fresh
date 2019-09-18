@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FreshCellModelable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FreshCollectionViewCell : UICollectionViewCell
+@interface FreshCollectionViewCell : UICollectionViewCell<FreshCellModelable>
 
 @property (nonatomic,strong,readonly) UIImageView *backgroundImageView;
 
 - (void)setupSubViews;
-
-- (void)configurationCellWithItem:(id)value;
 
 + (void)registerToCollectionView:(UICollectionView *)collectionView;
 

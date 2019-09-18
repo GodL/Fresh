@@ -8,7 +8,6 @@
 
 #import "FreshCollectionViewController.h"
 #import "FreshCollectionView.h"
-#import "FreshCollectionViewCell.h"
 #import "FreshReusableView.h"
 #import "UIScrollView+RefreshView.h"
 #import "FreshDatasViewModel.h"
@@ -38,8 +37,8 @@
         _collectionView = [self initializationCollectionView];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        [[self registerCells] enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [_collectionView registerClass:obj forCellWithReuseIdentifier:[obj description]];
+        [[self registerCells] enumerateObjectsUsingBlock:^(Class<FreshCellModelable>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [_collectionView registerClass:obj forCellWithReuseIdentifier:[[obj cellModel] description]];
         }];
         [[self registerReusableViews] enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [_collectionView registerClass:obj forSupplementaryViewOfKind:[obj reusableKind] withReuseIdentifier:[obj description]];
@@ -74,7 +73,7 @@
     return nil;
 }
 
-- (NSArray<Class> *)registerCells {
+- (NSArray<Class<FreshCellModelable>> *)registerCells {
     return @[];
 }
 
@@ -114,6 +113,8 @@
 
 - (void)collectionViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath {}
 
+- (void)collectionViewDidDeselectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath {}
+
 #pragma mark- UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.collectionViewStyle == UICollectionViewStylePlain ? 1 : self.viewModel.datas.count;
@@ -124,10 +125,11 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FreshCollectionViewCell *cell = [self cellForIndexPath:indexPath];
     id item = self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas[indexPath.row] : ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row];
+    NSString *identifier = [[item class] description];
+    id<FreshCellModelable> cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     [cell configurationCellWithItem:item];
-    return cell;
+    return (UICollectionViewCell *)cell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -138,6 +140,11 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     id item = self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas[indexPath.row] : ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row];
     [self collectionViewDidSelectedWithModel:item atIndexPath:indexPath];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    id item = self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas[indexPath.row] : ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row];
+    [self collectionViewDidDeselectedWithModel:item atIndexPath:indexPath];
 }
 
 /*

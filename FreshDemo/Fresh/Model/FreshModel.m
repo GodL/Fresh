@@ -16,6 +16,10 @@
 }
 #endif
 
++ (NSString *)description {
+    return [NSStringFromClass(self.class) stringByAppendingString:@"_reuseIdentifier"];
+}
+
 @end
 
 @implementation NSArray (Fresh)

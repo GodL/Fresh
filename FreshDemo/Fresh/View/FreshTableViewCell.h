@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FreshCellModelable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FreshTableViewCell : UITableViewCell
+@interface FreshTableViewCell : UITableViewCell<FreshCellModelable>
 
 @property (nonatomic,strong,readonly) UIImageView *backgroundImageView;
 
 - (void)setupSubViews;
-
-- (void)configurationCellWithItem:(id)value;
 
 + (void)registerToTableView:(UITableView *)tableView;
 

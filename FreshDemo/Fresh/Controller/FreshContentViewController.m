@@ -20,10 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.contentView];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self layoutContentView];
-    });
-    
+    [self layoutContentView];
     // Do any additional setup after lo ading the view.
 }
 

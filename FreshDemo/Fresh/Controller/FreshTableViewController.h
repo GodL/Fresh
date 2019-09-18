@@ -7,6 +7,7 @@
 //
 
 #import "FreshBaseController.h"
+#import "FreshCellModelable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,13 +25,13 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark- Overrided
 - (__kindof FreshTableView *)initializationTableView;
 
-- (NSArray<Class>*)registerCells;
+- (NSArray<Class<FreshCellModelable>> *)registerCells;
 
 - (void)layoutTableView;
 
-- (__kindof UITableViewCell *)cellForIndexPath:(NSIndexPath *)indexPath;
-
 - (void)tableViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath;
+
+- (void)tableViewDidDeselectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath;
 
 - (__kindof FreshDatasViewModel *)initializationViewModel;
 

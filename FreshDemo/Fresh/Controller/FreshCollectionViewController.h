@@ -7,6 +7,7 @@
 //
 
 #import "FreshBaseController.h"
+#import "FreshCellModelable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +30,7 @@ typedef NS_ENUM(NSInteger,UICollectionViewStyle) {
 #pragma mark- Overrided
 - (__kindof FreshCollectionView *)initializationCollectionView;
 
-- (NSArray<Class> *)registerCells;
+- (NSArray<Class<FreshCellModelable>> *)registerCells;
 
 - (NSArray<Class> *)registerReusableViews;
 
@@ -37,9 +38,10 @@ typedef NS_ENUM(NSInteger,UICollectionViewStyle) {
 
 - (UICollectionViewStyle)collectionViewStyle;
 
-- (__kindof UICollectionViewCell *)cellForIndexPath:(NSIndexPath *)indexPath;
-
 - (void)collectionViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath;
+
+- (void)collectionViewDidDeselectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath;
+
 
 - (__kindof UICollectionReusableView *)reusableViewForKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath ;
 

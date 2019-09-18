@@ -8,7 +8,6 @@
 
 #import "FreshTableViewController.h"
 #import "FreshTableView.h"
-#import "FreshTableViewCell.h"
 #import "FreshDatasViewModel.h"
 #import "UIScrollView+RefreshView.h"
 #import <Masonry/Masonry.h>
@@ -35,8 +34,10 @@
 - (FreshTableView *)tableView {
     if (!_tableView) {
         _tableView = [self initializationTableView];
-        [[self registerCells] enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [_tableView registerClass:obj forCellReuseIdentifier:[obj description]];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        [[self registerCells] enumerateObjectsUsingBlock:^(Class<FreshCellModelable>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [_tableView registerClass:obj forCellReuseIdentifier:[[obj cellModel] description]];
         }];
         [self.view addSubview:_tableView];
         SKSelector(_tableView, reloadData) = [self.viewModel.command.executeSignals.switchToLatest takeUntil:self.deallocSignal];
@@ -66,7 +67,7 @@
     return tableView;
 }
 
-- (NSArray<Class> *)registerCells {
+- (NSArray<Class<FreshCellModelable>> *)registerCells {
     return @[];
 }
 
@@ -103,6 +104,8 @@
 
 - (void)tableViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath {}
 
+- (void)tableViewDidDeselectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath {}
+
 #pragma mark- UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.tableView.style == UITableViewStyleGrouped ? self.viewModel.datas.count : 1;
@@ -113,15 +116,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FreshTableViewCell *cell = [self cellForIndexPath:indexPath];
     id value = tableView.style == UITableViewStyleGrouped ? ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row] : self.viewModel.datas[indexPath.row];
+    NSString *identifier = [[value class] description];
+    id<FreshCellModelable> cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [cell configurationCellWithItem:value];
-    return cell;
+    return (UITableViewCell *)cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     id value = tableView.style == UITableViewStyleGrouped ? ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row] : self.viewModel.datas[indexPath.row];
     [self tableViewDidSelectedWithModel:value atIndexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    id value = tableView.style == UITableViewStyleGrouped ? ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row] : self.viewModel.datas[indexPath.row];
+    [self tableViewDidDeselectedWithModel:value atIndexPath:indexPath];
 }
 
 /*

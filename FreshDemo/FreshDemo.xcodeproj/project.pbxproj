@@ -139,6 +139,7 @@
 		A89911F39DB499F227B6FD61 /* Pods-FreshDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreshDemo/Pods-FreshDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C98BF35E2299765500E9FA6C /* FreshReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshReusableView.h; sourceTree = "<group>"; };
 		C98BF35F2299765500E9FA6C /* FreshReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshReusableView.m; sourceTree = "<group>"; };
+		C9BF6FDC23329EA300F782B5 /* FreshCellModelable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshCellModelable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				882EEA4422D343210016287E /* FreshDatasProtocol.h */,
+				C9BF6FDC23329EA300F782B5 /* FreshCellModelable.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";

@@ -31,10 +31,6 @@
     [collectionView registerClass:self forCellWithReuseIdentifier:[self description]];
 }
 
-+ (NSString *)description {
-    return [NSStringFromClass(self.class) stringByAppendingString:@"_reuseIdentifier"];
-}
-
 - (UIImageView *)backgroundImageView {
     if (!_backgroundImageView) {
         _backgroundImageView = [UIImageView new];
@@ -52,5 +48,10 @@
     NSLog(@"%@ delloc",NSStringFromClass(self.class));
 }
 #endif
+
+#pragma mark- FreshCellModelable
++ (Class)cellModel {
+    return nil;
+}
 
 @end
