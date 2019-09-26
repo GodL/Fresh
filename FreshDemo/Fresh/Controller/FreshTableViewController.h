@@ -6,7 +6,7 @@
 //  Copyright © 2019 com.GodL.github. All rights reserved.
 //
 
-#import "FreshBaseController.h"
+#import "FreshContentViewController.h"
 #import "FreshCellModelable.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class FreshTableView;
 @class FreshDatasViewModel;
 
-@interface FreshTableViewController : FreshBaseController<UITableViewDelegate,UITableViewDataSource>
+@interface FreshTableViewController : FreshContentViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong,readonly) __kindof FreshTableView *tableView;
 

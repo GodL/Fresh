@@ -6,7 +6,7 @@
 //  Copyright © 2019 com.GodL.github. All rights reserved.
 //
 
-#import "FreshBaseController.h"
+#import "FreshContentViewController.h"
 #import "FreshCellModelable.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger,UICollectionViewStyle) {
     UICollectionViewStyleGroup
 };
 
-@interface FreshCollectionViewController : FreshBaseController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface FreshCollectionViewController : FreshContentViewController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong,readonly) __kindof FreshCollectionView *collectionView;
 
