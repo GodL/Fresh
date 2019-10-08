@@ -45,7 +45,7 @@
         _pageController.delegate = self;
         _pageController.dataSource = self;
         [self addChildViewController:_pageController];
-        [self.view addSubview:self.pageController.view];
+        [self.contentView addSubview:self.pageController.view];
         [_pageController setViewControllers:@[self.controllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     }
     return _pageController;
@@ -58,7 +58,7 @@
         SKSelector(self, setSegmentedIndex:) = [[_segmentedControl sk_signalForControlEvents:UIControlEventValueChanged] map:^id(id<FreshSegmentedViewProtocol> x) {
             return @(x.selectedSegmentIndex);
         }];
-        [self.view addSubview:(UIView *)_segmentedControl];
+        [self.contentView addSubview:(UIView *)_segmentedControl];
     }
     return _segmentedControl;
 }
@@ -72,6 +72,12 @@
 - (id<FreshSegmentedViewProtocol>)innerSegmentedControl {
     NSAssert(NO, @"should override by subclass");
     return nil;
+}
+
+- (void)layoutContentView {
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+    }];
 }
 
 - (void)layoutPageController {

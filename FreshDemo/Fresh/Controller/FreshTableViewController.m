@@ -39,7 +39,7 @@
         [[self registerCells] enumerateObjectsUsingBlock:^(Class<FreshCellModelable>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [_tableView registerClass:obj forCellReuseIdentifier:[[obj cellModel] description]];
         }];
-        [self.view addSubview:_tableView];
+        [self.contentView addSubview:_tableView];
         SKSelector(_tableView, reloadData) = [self.viewModel.command.executeSignals.switchToLatest takeUntil:self.deallocSignal];
     }
     return _tableView;
@@ -69,6 +69,12 @@
 
 - (NSArray<Class<FreshCellModelable>> *)registerCells {
     return @[];
+}
+
+- (void)layoutContentView {
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+    }];
 }
 
 - (void)layoutTableView {

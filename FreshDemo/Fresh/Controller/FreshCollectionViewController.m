@@ -43,7 +43,7 @@
         [[self registerReusableViews] enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [_collectionView registerClass:obj forSupplementaryViewOfKind:[obj reusableKind] withReuseIdentifier:[obj description]];
         }];
-        [self.view addSubview:_collectionView];
+        [self.contentView addSubview:_collectionView];
         SKSelector(_collectionView, reloadData) = [self.viewModel.command.executeSignals.switchToLatest takeUntil:self.deallocSignal];
     }
     return _collectionView;
@@ -79,6 +79,12 @@
 
 - (NSArray<Class> *)registerReusableViews {
     return @[];
+}
+
+- (void)layoutContentView {
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+    }];
 }
 
 - (void)layoutCollectionView {

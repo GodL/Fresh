@@ -6,7 +6,7 @@
 //  Copyright © 2019 com.GodL.github. All rights reserved.
 //
 
-#import "FreshBaseController.h"
+#import "FreshContentViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class SKSignal;
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface FreshPageViewsController : FreshBaseController
+@interface FreshPageViewsController : FreshContentViewController
 
 @property (nonatomic,strong,readonly) UIPageViewController *pageController;
 
