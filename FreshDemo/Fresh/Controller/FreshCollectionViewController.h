@@ -38,6 +38,8 @@ typedef NS_ENUM(NSInteger,UICollectionViewStyle) {
 
 - (UICollectionViewStyle)collectionViewStyle;
 
+- (void)configCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 - (void)collectionViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath;
 
 - (void)collectionViewDidDeselectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath;

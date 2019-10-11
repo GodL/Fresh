@@ -97,14 +97,11 @@
     return UICollectionViewStylePlain;
 }
 
-- (UICollectionViewCell *)cellForItem:(NSIndexPath *)indexPath {
-    NSAssert(NO, @"should be overrided by subclass");
-    return nil;
-}
-
 - (UIRefreshControl *)initializationRefreshControl {
     return nil;
 }
+
+- (void)configCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {}
 
 - (void)setupRefreshControl {
     UIRefreshControl *refreshControl = [self refreshControl];
@@ -134,6 +131,7 @@
     id item = self.collectionViewStyle == UICollectionViewStylePlain ? self.viewModel.datas[indexPath.row] : ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row];
     NSString *identifier = [[item class] description];
     id<FreshCellModelable> cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    [self configCell:(UICollectionViewCell *)cell atIndexPath:indexPath];
     [cell configurationCellWithItem:item];
     return (UICollectionViewCell *)cell;
 }

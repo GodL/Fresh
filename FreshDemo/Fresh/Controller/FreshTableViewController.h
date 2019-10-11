@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray<Class<FreshCellModelable>> *)registerCells;
 
+- (void)configCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 - (void)layoutTableView;
 
 - (void)tableViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath;

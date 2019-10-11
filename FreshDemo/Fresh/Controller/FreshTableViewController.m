@@ -71,6 +71,8 @@
     return @[];
 }
 
+- (void)configCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {}
+
 - (void)layoutContentView {
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.insets(UIEdgeInsetsZero);
@@ -81,11 +83,6 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.insets(UIEdgeInsetsZero);
     }];
-}
-
-- (__kindof UITableViewCell *)cellForIndexPath:(NSIndexPath *)indexPath {
-    NSAssert(NO, @"should be overrided by subclass");
-    return nil;
 }
 
 - (FreshDatasViewModel *)initializationViewModel {
@@ -125,7 +122,9 @@
     id value = tableView.style == UITableViewStyleGrouped ? ((id<FreshDatasProtocol>)self.viewModel.datas[indexPath.section]).datas[indexPath.row] : self.viewModel.datas[indexPath.row];
     NSString *identifier = [[value class] description];
     id<FreshCellModelable> cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    [self configCell:(UITableViewCell *)cell atIndexPath:indexPath];
     [cell configurationCellWithItem:value];
+    [self ]
     return (UITableViewCell *)cell;
 }
 
