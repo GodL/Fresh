@@ -124,7 +124,6 @@
     id<FreshCellModelable> cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [self configCell:(UITableViewCell *)cell atIndexPath:indexPath];
     [cell configurationCellWithItem:value];
-    [self ]
     return (UITableViewCell *)cell;
 }
 
