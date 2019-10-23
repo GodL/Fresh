@@ -34,6 +34,8 @@
 - (FreshTableView *)tableView {
     if (!_tableView) {
         _tableView = [self initializationTableView];
+        _tableView.tableHeaderView = [self tableViewHeaderView];
+        _tableView.tableFooterView = [self tableViewFooterView];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [[self registerCells] enumerateObjectsUsingBlock:^(Class<FreshCellModelable>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -108,6 +110,14 @@
 - (void)tableViewDidSelectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath {}
 
 - (void)tableViewDidDeselectedWithModel:(id)model atIndexPath:(NSIndexPath *)indexPath {}
+
+- (UIView *)tableViewHeaderView {
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth(self.view.frame), CGFLOAT_MIN)];
+}
+
+- (UIView *)tableViewFooterView {
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth(self.view.frame), CGFLOAT_MIN)];
+}
 
 #pragma mark- UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

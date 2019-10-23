@@ -28,11 +28,9 @@
 - (void)beginRefresh {
     [self.refreshView beginRefreshing];
     [self.refreshView sendActionsForControlEvents:UIControlEventValueChanged];
-    if (self.contentOffset.y == 0) {
-        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^(void){
-            self.contentOffset = CGPointMake(0, -self.refreshView.frame.size.height);
-        } completion:nil];
-    }
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^(void){
+        self.contentOffset = CGPointMake(0, -self.refreshView.frame.size.height);
+    } completion:nil];
 }
 
 @end
